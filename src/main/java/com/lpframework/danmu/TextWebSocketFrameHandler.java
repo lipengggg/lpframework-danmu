@@ -10,8 +10,9 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
 /**
- * 处理TextWebSocketFrame
- *
+ *处理TextWebSocketFrame
+ * @author lipeng
+ * @version Id: WebSocketConfig.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
  */
 public class TextWebSocketFrameHandler extends
         SimpleChannelInboundHandler<TextWebSocketFrame> {
