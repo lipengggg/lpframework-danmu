@@ -1,6 +1,5 @@
 var websocket=null;
 var host=window.location.host;
-var data = null;
 
 //判断当前浏览器是否支持WebSocket
 if('WebSocket' in window){
@@ -23,8 +22,7 @@ websocket.onopen = function(event){
 //接收到消息的回调方法
 // 收到服务器发送的消息
 websocket.onmessage = function(){
-    //setMessageInnerHTML(event.data);
-    data = event.data;
+    setMessageInnerHTML(event.data);
 }
 
 //连接关闭的回调方法
@@ -44,10 +42,6 @@ window.onload = function () {
     var portrait_position = 0;
     var now = -1;//左右浮动
     var send_btn = document.getElementById('send_btn');
-    var send_txt = document.getElementById('send_txt');
-    var chat_ul = document.getElementById('chat_ul');
-    var chat_span = chat_ul.getElementsByTagName('span');
-    var chat_img = chat_ul.getElementsByTagName('img');
 
     send_btn.onclick = function () {
         if (send_txt.value == '') {
@@ -55,21 +49,27 @@ window.onload = function () {
         } else {
             websocket.send(send_txt.value);
 
-            chat_ul.innerHTML += '<li><img src="../img/img.jpg"><span>' + data + '</span>';
-            now++;
-            if (num==0) {
-                chat_span[now].className = 'spanright';
-                chat_img[now].className = 'imgright';
-            }
-            else {
-                chat_span[now].className = 'spanleft';
-                chat_img[now].className = 'imgleft';
-            }
-            send_txt.value = '';
-            // 内容过多时,将滚动条放置到最底端
-            /*contentcontent.scrollTop = content.scrollHeight;*/
         }
     }
+}
 
+function setMessageInnerHTML(data) {
+    var send_txt = document.getElementById('send_txt');
+    var chat_ul = document.getElementById('chat_ul');
+    var chat_span = chat_ul.getElementsByTagName('span');
+    var chat_img = chat_ul.getElementsByTagName('img');
 
+    chat_ul.innerHTML += '<li><img src="../img/img.jpg"><span>' + data + '</span>';
+    now++;
+    if (num==0) {
+        chat_span[now].className = 'spanright';
+        chat_img[now].className = 'imgright';
+    }
+    else {
+        chat_span[now].className = 'spanleft';
+        chat_img[now].className = 'imgleft';
+    }
+    send_txt.value = '';
+    // 内容过多时,将滚动条放置到最底端
+    /*contentcontent.scrollTop = content.scrollHeight;*/
 }
