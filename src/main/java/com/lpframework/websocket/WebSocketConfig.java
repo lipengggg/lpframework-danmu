@@ -17,10 +17,16 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(webSocketHandler(), "/webSocketHandler");
+        registry.addHandler(loginWebSocketHandler(), "/loginWebSocketHandler");
     }
 
     @Bean
     public WebSocketHandler webSocketHandler() {
         return new WebSocketHandler();
+    }
+
+    @Bean
+    public LoginWebSocketHandler loginWebSocketHandler() {
+        return new LoginWebSocketHandler();
     }
 }

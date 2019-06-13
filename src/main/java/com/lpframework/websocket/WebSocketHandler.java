@@ -27,7 +27,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
             //遍历所有的客户端发送消息
             for (WebSocketSession socketSession: sessions){
                 byte[] bytes = message.asBytes();
-                TextMessage textMessage = new TextMessage("我发送的消息："+new String(bytes));
+                TextMessage textMessage = new TextMessage("我发送的消息："+new String(bytes,"utf-8"));
                 socketSession.sendMessage(textMessage);
             }
         }
