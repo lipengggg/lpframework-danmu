@@ -14,23 +14,15 @@ import java.util.concurrent.CopyOnWriteArraySet;
 /**
  *
  * @author lipeng
- * @version Id: WebSocketHandler.java, v 0.1 2019/6/12 15:32 lipeng Exp $$
+ * @version Id: LoginWebSocketHandler.java, v 0.1 2019/6/12 15:32 lipeng Exp $$
  */
-public class WebSocketHandler extends TextWebSocketHandler {
+public class LoginWebSocketHandler extends TextWebSocketHandler {
 
     private static CopyOnWriteArraySet<WebSocketSession> sessions = new CopyOnWriteArraySet<WebSocketSession>();
     private static ConcurrentHashMap<String,User> userInfo = new ConcurrentHashMap<>();
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        if(!CollectionUtils.isEmpty(sessions)){
-            //遍历所有的客户端发送消息
-            for (WebSocketSession socketSession: sessions){
-                byte[] bytes = message.asBytes();
-                TextMessage textMessage = new TextMessage("我发送的消息："+new String(bytes));
-                socketSession.sendMessage(textMessage);
-            }
-        }
     }
 
     /**
