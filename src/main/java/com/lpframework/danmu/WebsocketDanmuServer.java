@@ -10,7 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  *Websocket 聊天服务器-服务端
  * @author lipeng
- * @version Id: WebSocketConfig.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
+ * @version Id: WebsocketDanmuServer.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
  */
 public class WebsocketDanmuServer {
 

@@ -12,7 +12,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 /**
  *处理TextWebSocketFrame
  * @author lipeng
- * @version Id: WebSocketConfig.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
+ * @version Id: TextWebSocketFrameHandler.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
  */
 public class TextWebSocketFrameHandler extends
         SimpleChannelInboundHandler<TextWebSocketFrame> {

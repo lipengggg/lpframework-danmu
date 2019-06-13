@@ -12,7 +12,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 /**
  * 服务端 ChannelInitializer
  * @author lipeng
- * @version Id: WebSocketConfig.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
+ * @version Id: WebsocketDanmuServerInitializer.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
  */
 public class WebsocketDanmuServerInitializer extends
         ChannelInitializer<SocketChannel> {	//1

@@ -13,7 +13,7 @@ import java.net.URL;
 /**
  *处理 Http 请求
  * @author lipeng
- * @version Id: WebSocketConfig.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
+ * @version Id: HttpRequestHandler.java, v 0.1 2019/6/12 15:38 lipeng Exp $$
  */
 public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequest> { //1
     private final String wsUri;
