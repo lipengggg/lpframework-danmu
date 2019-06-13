@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lpframework-danmu:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="danmu.war">
+      <element id="artifact" artifact-name="lpframework-danmu:war exploded" />
+    </root>
+  </artifact>
+</component>
